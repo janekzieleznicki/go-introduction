@@ -1,0 +1,17 @@
+syntax = "proto3";
+
+package hasher;
+
+option go_package = "./hasher";
+
+import "google/protobuf/empty.proto";
+
+service HashedPasswordGenerator {
+  rpc GeneratePassword(google.protobuf.Empty) returns (stream HashedPassword) {}
+}
+
+message HashedPassword {
+   int32 index = 1;
+   string password = 2;
+   string hash = 3;
+}
