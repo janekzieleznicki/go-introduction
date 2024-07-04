@@ -27,9 +27,5 @@
 	"forwardPorts": [50051],
 
 	// Install dependancy system packages
-	"postCreateCommand": "
-	sudo apt-get update &&\
-	sudo apt-get install -y libssl-dev protobuf-compiler protoc-gen-go protoc-gen-go-grpc
-	",
-
+	"postCreateCommand": "sudo apt-get update && sudo apt-get install -y libssl-dev protobuf-compiler protoc-gen-go protoc-gen-go-grpc",
 }
