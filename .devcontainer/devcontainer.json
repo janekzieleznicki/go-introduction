@@ -1,0 +1,35 @@
+{
+	"name": "Go",
+	// Or use a Dockerfile or Docker Compose file. More info: https://containers.dev/guide/dockerfile
+	"image": "mcr.microsoft.com/devcontainers/go:1-1.22-bookworm",
+
+	"customizations": {
+
+		"vscode": {
+			"settings": {},
+			"extensions": [
+				"streetsidesoftware.code-spell-checker"
+			]
+		}
+	},
+	// Use 'forwardPorts' to make a list of ports inside the container available locally.
+	// "forwardPorts": [9000],
+	// Use 'portsAttributes' to set default properties for specific forwarded ports. 
+	// More info: https://containers.dev/implementors/json_reference/#port-attributes
+	"portsAttributes": {
+		"50051": {
+			"label": "gRPC port",
+			"onAutoForward": "notify"
+		}
+	},
+	
+	// Use 'forwardPorts' to make a list of ports inside the container available locally.
+	"forwardPorts": [50051],
+
+	// Install dependancy system packages
+	"postCreateCommand": "
+	sudo apt-get update &&\
+	sudo apt-get install -y libssl-dev protobuf-compiler protoc-gen-go protoc-gen-go-grpc
+	",
+
+}

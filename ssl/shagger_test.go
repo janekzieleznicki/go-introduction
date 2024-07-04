@@ -8,7 +8,6 @@ import (
 )
 func TestSha256(t *testing.T){
   assert := assert.New(t)
-
   assert.Equal(expected, Sha256(input), "Hash should produce expected")
 }
 var input = "Decidable-Unsavory-Marmalade-Onward-Bazooka-Supply-Hardness-Boondocks-Cosmic-Improving"

@@ -1,15 +1,12 @@
 package ssl
 
 import (
-  // "fmt"
   "unsafe"
   "encoding/hex"
-
 )
 
 /*
 #cgo LDFLAGS: -lssl -lcrypto
-#include <openssl/sha.h>
 #include <openssl/evp.h>
 */
 import "C"

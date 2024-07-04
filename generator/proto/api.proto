@@ -7,7 +7,7 @@ option go_package = "./hasher";
 import "google/protobuf/empty.proto";
 
 service HashedPasswordGenerator {
-  rpc GeneratePassword(google.protobuf.Empty) returns (stream HashedPassword) {}
+  rpc GeneratePassword(google.protobuf.Empty) returns (stream HashedPassword);
 }
 
 message HashedPassword {
