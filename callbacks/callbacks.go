@@ -22,6 +22,15 @@ func callback_go(data C.int, opaque unsafe.Pointer) C.int {
 	fmt.Printf("Callback called %d, with data:\t%v\n", data, complexData)
 	return 0
 }
+//export struct_callback_go 
+func struct_callback_go(val *C.struct_AsStruct) {
+
+}
+
+//export typedef_callback_go
+func typedef_callback_go(val *C.Typedefed){
+
+}
 
 func main() {
 	complexData := new(ComplexData)
